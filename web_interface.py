@@ -29,7 +29,7 @@ app.register_blueprint(api_bp)
 def clean_pycache():
     """Limpiar todos los directorios __pycache__ al cerrar."""
     try:
-        base_dir = os.path.dirname(os.path.abspath(__file__))
+        base_dir = os.getcwd()  # Usar directorio actual en lugar de __file__
         count = 0
         for root, dirs, files in os.walk(base_dir):
             if '__pycache__' in dirs:
