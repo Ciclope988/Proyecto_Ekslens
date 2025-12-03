@@ -47,11 +47,35 @@ Frontend:
 
 ### **Componentes Principales**
 
+**Arquitectura Refactorizada (Backend/Frontend separados):**
+
 ```
 ekslens/
 │
-├── database.py              # Capa de abstracción de PostgreSQL
-├── web_interface.py         # API REST con Flask
+├── backend/                  # Backend modularizado
+│   ├── api/                 # Endpoints REST
+│   │   └── routes.py
+│   ├── config/              # Configuración
+│   │   └── settings.py
+│   ├── database/            # Capa de datos
+│   │   ├── connection.py
+│   │   ├── models.py
+│   │   └── queries.py
+│   ├── services/            # Lógica de negocio
+│   │   ├── lead_service.py
+│   │   └── search_service.py
+│   └── utils/               # Utilidades
+│       └── helpers.py
+│
+├── frontend/                 # Frontend separado
+│   ├── static/
+│   │   ├── css/
+│   │   └── js/
+│   └── templates/
+│       └── index.html
+│
+├── database.py              # Wrapper de compatibilidad
+├── web_interface.py         # Aplicación Flask principal
 ├── ekslens_lead_master_modular.py  # Coordinador principal
 │
 ├── scrapers/
@@ -433,7 +457,7 @@ Este proyecto está bajo la Licencia MIT. Ver archivo `LICENSE` para más detall
 
 **Agustin Trebucq**
 - GitHub: [@Ciclope988](https://github.com/Ciclope988)
-- Proyecto: [Proyecto-Final-hack-a-boss](https://github.com/Ciclope988/Proyecto-Final-hack-a-boss)
+- Proyecto: [Ekslens](https://https://github.com/Ciclope988/Proyecto_Ekslens)
 
 ---
 
@@ -462,6 +486,6 @@ Este proyecto es una **demostración técnica** con fines educativos. El web scr
 
 **🔍 EKSLENS** - *Transformando la búsqueda de leads con tecnología*
 
-⭐ Si te ha gustado el proyecto, ¡déjanos una estrella en GitHub!
+⭐ Si te ha gustado el proyecto, ¡déjame una estrella en GitHub!
 
 </div>
