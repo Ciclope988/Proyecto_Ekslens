@@ -24,7 +24,7 @@ class DatabaseConnection:
         self.port = int(self.config.get('DATABASE_PORT', 5433))
         self.database = self.config.get('DATABASE_NAME', 'ekslens_leads')
         self.user = self.config.get('DATABASE_USER', 'postgres')
-        self.password = self.config.get('DATABASE_PASSWORD', 'Miat1005')
+        self.password = self.config.get('DATABASE_PASSWORD', '')
         
         self.connection = None
         self.connected = False
