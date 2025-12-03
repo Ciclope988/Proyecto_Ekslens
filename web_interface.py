@@ -5,6 +5,9 @@ Servidor Flask modularizado con arquitectura backend/frontend separada
 
 from flask import Flask
 import logging
+import shutil
+import os
+import atexit
 from backend.api.routes import api_bp, web_bp
 from backend.database.queries import DatabaseQueries
 
@@ -21,6 +24,26 @@ app.secret_key = 'ekslens_secure_key_2024'
 # Registrar Blueprints
 app.register_blueprint(web_bp)
 app.register_blueprint(api_bp)
+
+
+def clean_pycache():
+    """Limpiar todos los directorios __pycache__ al cerrar."""
+    try:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        count = 0
+        for root, dirs, files in os.walk(base_dir):
+            if '__pycache__' in dirs:
+                pycache_path = os.path.join(root, '__pycache__')
+                shutil.rmtree(pycache_path)
+                count += 1
+        if count > 0:
+            print(f"\n🧹 {count} directorios __pycache__ eliminados")
+    except Exception as e:
+        print(f"\n⚠️ Error limpiando __pycache__: {e}")
+
+
+# Registrar limpieza al cerrar
+atexit.register(clean_pycache)
 
 
 def main():
