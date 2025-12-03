@@ -563,10 +563,9 @@
                     <label for="industry">Industria objetivo:</label>
                     <select id="industry" onchange="changeIndustry()">
                         <option value="medical_aesthetics">Medicina Estética</option>
-                        <option value="real_estate">Inmobiliario</option>
                     </select>
                     <small style="color: #666; font-size: 12px; margin-top: 5px; display: block;">
-                        🏭 Selecciona la industria para optimizar la búsqueda
+                        🏥 Sistema especializado en medicina estética
                     </small>
                 </div>
                 
@@ -1663,8 +1662,7 @@ Me gustaría conectar contigo para explorar oportunidades de colaboración en fi
                         
                         // Nombres más amigables
                         const friendlyNames = {
-                            'medical_aesthetics': 'Medicina Estética',
-                            'real_estate': 'Inmobiliario'
+                            'medical_aesthetics': 'Medicina Estética'
                         };
                         
                         option.textContent = friendlyNames[industry] || industry;

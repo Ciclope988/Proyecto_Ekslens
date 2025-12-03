@@ -83,9 +83,8 @@ ekslens/
 │   └── linkedin_scraper.py  # Scraping de LinkedIn (opcional)
 │
 ├── industries/
-│   ├── base_industry.py     # Clase base para industrias
-│   ├── medical_aesthetics.py # Configuración medicina estética
-│   └── real_estate.py       # Ejemplo de extensibilidad
+│   ├── base_industry.py     # Clase base para extensibilidad
+│   └── medical_aesthetics.py # Configuración específica de medicina estética
 │
 └── templates/
     └── index.html           # Dashboard interactivo

@@ -22,7 +22,6 @@ from scrapers.serpapi_scraper import SerpApiScraper
 
 # Imports de configuraciones por industria
 from industries.medical_aesthetics import MedicalAestheticsIndustry
-from industries.real_estate import RealEstateIndustry
 
 # Import para AI
 try:
@@ -79,8 +78,7 @@ class EkslensLeadMaster:
     def _setup_industry(self, industry_type: str):
         """Configurar industria específica."""
         industry_map = {
-            'medical_aesthetics': MedicalAestheticsIndustry(),
-            'real_estate': RealEstateIndustry()
+            'medical_aesthetics': MedicalAestheticsIndustry()
         }
         
         industry = industry_map.get(industry_type)
@@ -341,7 +339,7 @@ class EkslensLeadMaster:
     
     def get_available_industries(self) -> List[str]:
         """Obtener lista de industrias disponibles."""
-        return ['medical_aesthetics', 'real_estate']
+        return ['medical_aesthetics']
     
     def get_industry_info(self) -> Dict:
         """Obtener información de la industria actual."""
@@ -358,18 +356,13 @@ def main():
     print("🚀 EKSLENS LEAD MASTER - ARQUITECTURA MODULAR")
     print("="*60)
     print("🎯 Sistema modular por industrias")
-    print("📋 Industrias disponibles:")
-    print("   1. Medical Aesthetics (medicina estética)")
-    print("   2. Real Estate (inmobiliaria)")
+    print("📋 Industria disponible:")
+    print("   • Medical Aesthetics (medicina estética)")
     print()
     
-    # Seleccionar industria
-    industry_choice = input("Selecciona industria [1-medical_aesthetics, 2-real_estate]: ").strip()
-    
-    if industry_choice == '2':
-        industry_type = 'real_estate'
-    else:
-        industry_type = 'medical_aesthetics'
+    # Solo medicina estética disponible
+    industry_type = 'medical_aesthetics'
+    print("🏥 Industria: Medicina Estética")
     
     # Crear coordinador con industria seleccionada
     master = EkslensLeadMaster(industry_type)
