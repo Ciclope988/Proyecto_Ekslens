@@ -1,0 +1,89 @@
+# =====================================================
+# EKSLENS - Git Ignore Configuration
+# Sistema de captación de leads para medicina estética
+# =====================================================
+
+# =====================================================
+# CREDENCIALES Y CONFIGURACIÓN SENSIBLE (MUY IMPORTANTE)
+# =====================================================
+.env
+.env.local
+.env.*.local
+.env.backup
+.env.old
+*.env
+config.json
+credentials.json
+secrets.json
+
+# =====================================================
+# PYTHON
+# =====================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# =====================================================
+# BASE DE DATOS Y DATOS SENSIBLES
+# =====================================================
+*.sql
+!setup_database.sql
+*.db
+*.sqlite
+*.sqlite3
+exports/
+*.csv
+*.xlsx
+database_backups/
+
+# =====================================================
+# LOGS Y TEMPORALES
+# =====================================================
+logs/
+*.log
+temp/
+tmp/
+*.tmp
+*.bak
+*.swp
+
+# =====================================================
+# IDE Y EDITORES
+# =====================================================
+.vscode/
+.idea/
+*.sublime-*
+
+# =====================================================
+# SISTEMA OPERATIVO
+# =====================================================
+.DS_Store
+Thumbs.db
+
+# =====================================================
+# ARCHIVOS ESPECÍFICOS DEL PROYECTO
+# =====================================================
+search_results/
+lead_exports/
+scrapers_cache/
+test_*.py
+testing/
+Buscador.py
+Sendmail.py
